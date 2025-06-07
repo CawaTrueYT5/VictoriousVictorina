@@ -1,6 +1,14 @@
-<h1>Victorious Victorina! Ласкаво просимо!</h1>
+{% load static %}
 
-{% block content %}
-{% endblock %}
+<div style="display: inline-block">
+    <img src="{% static 'img/full_site_logo.png' %}" width="900" height="375">
+</div>
 
-<h1>Для зв'язку: +38038523859</h1>
+<div style="display: inline-block">
+    <h1>Victorious Victorina! Ласкаво просимо!</h1>
+
+    {% block content %}
+    {% endblock %}
+
+    <h1>Для зв'язку: +38038523859</h1>
+</div>
