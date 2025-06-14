@@ -1,0 +1,32 @@
+.section_button {
+    background-color: rgb(0, 0, 0, 0.1);
+    border: 0px;
+    font: 80px Haettenschweiler;
+    padding: 10px 80px 10px 80px
+}
+.section_button:hover {
+    background-color: rgb(0, 0, 0, 0.2)
+}
+.section_button:active {
+    background-color: rgb(0, 0, 0, 0.3)
+}
+
+.big_text {
+    background-color: rgb(0, 0, 0, 0.05);
+    font: 70px Haettenschweiler
+}
+.big_text:hover {
+    background-color: rgb(0, 0, 0, 0.07)
+}
+
+.small_text {
+    background-color: rgb(0, 0, 0, 0.05);
+    font: 40px Haettenschweiler
+}
+.small_text:hover {
+    background-color: rgb(0, 0, 0, 0.07)
+}
+
+.html {
+    background-color: rgb(0, 0, 0)
+}

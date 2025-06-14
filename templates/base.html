@@ -1,14 +1,20 @@
 {% load static %}
+<link rel="stylesheet" href="{% static 'css/main_style.css'%}">
+<link rel="shortcut icon" href="{% static 'favicon/site_icon.ico' %}">
 
-<div style="display: inline-block">
-    <img src="{% static 'img/full_site_logo.png' %}" width="900" height="375">
-</div>
+<img src="{% static 'img/full_site_logo.png' %}" width="600" height="250" style="display: inline-block">
+<h1 class="big_text" style="display: inline-block;">Victorious Victorina! Ласкаво просимо!                          ㅤ</h1>
 
-<div style="display: inline-block">
-    <h1>Victorious Victorina! Ласкаво просимо!</h1>
 
-    {% block content %}
-    {% endblock %}
+<br>
 
-    <h1>Для зв'язку: +38038523859</h1>
-</div>
+<a><button class="section_button">Головна</button></a>
+<a><button class="section_button">Меню</button></a>
+<a><button class="section_button">Головна</button></a>
+<a><button class="section_button">Головна</button></a>
+<a><button class="section_button">Головна</button></a>
+
+{% block content %}
+{% endblock %}
+
+<h1 class="small_text">Для зв'язку: +38038523859</h1>
