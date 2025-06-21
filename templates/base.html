@@ -8,12 +8,13 @@
 
 <br>
 
-<a><button class="section_button">Головна</button></a>
-<a><button class="section_button">Меню</button></a>
-<a><button class="section_button">Головна</button></a>
-<a><button class="section_button">Головна</button></a>
-<a><button class="section_button">Головна</button></a>
+<a href="{% url "novation_list" %}"><button class="section_button">Головна</button></a>
+<a href="{% url "victorina_list" %}"><button class="section_button">Вікторина</button></a>
+<a><button class="section_button">.</button></a>
+<a><button class="section_button">.</button></a>
+<a><button class="section_button">.</button></a>
 
+<br><br>
 {% block content %}
 {% endblock %}
 
