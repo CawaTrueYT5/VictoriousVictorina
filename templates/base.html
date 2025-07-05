@@ -3,18 +3,17 @@
 <link rel="shortcut icon" href="{% static 'favicon/site_icon.ico' %}">
 
 <img src="{% static 'img/full_site_logo.png' %}" width="600" height="250" style="display: inline-block">
-<h1 class="big_text" style="display: inline-block;">Victorious Victorina! Ласкаво просимо!                          ㅤ</h1>
-
+<h1 class="big_text" style="display: inline-block; position: absolute; top: -35px; word-wrap: break-word;">Victorious Victorina! Ласкаво просимо!                          ㅤ</h1>
+<button style="display: inline-block; float: right;"><img src="{% static 'img/dark_icon.png' %}" width="50" height="50"></button>
 
 <br>
 
 <a href="{% url "novation_list" %}"><button class="section_button">Головна</button></a>
-<a href="{% url "victorina_list" %}"><button class="section_button">Вікторина</button></a>
-<a><button class="section_button">.</button></a>
-<a><button class="section_button">.</button></a>
-<a><button class="section_button">.</button></a>
+<a href="{% url "victorina_list" %}"><button class="section_button">Вікторини</button></a>
+<a><button class="section_button">Форуми</button></a>
 
-<br><br>
+<br>
+<br>
 {% block content %}
 {% endblock %}
 
