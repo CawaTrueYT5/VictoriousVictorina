@@ -1,0 +1,15 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/main_style.css' %}">
+
+{% block content %}
+    <h1 class="small_text">{{victorina.title}}</h1>
+    <h1 class="small_text">{{victorina.description}}</h1>
+    <h1 class="small_text">{{victorina.topics}}</h1>
+    <h1 class="small_text" id="questions_amount">{{victorina.questions}}</h1>
+    <a href="{% url "victorina_processing" victorina.pk %}"><button class="button" style="margin-bottom: 10px">Розпочати</button></a>
+    <a href="{% url 'victorinas_list' %}"><button class="button">Назад</button></a>
+
+    <script src="{% static "js/victorina_page.js" %}"></script>
+{% endblock %}
+

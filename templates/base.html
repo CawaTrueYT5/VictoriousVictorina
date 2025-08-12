@@ -4,12 +4,13 @@
 
 <img src="{% static 'img/full_site_logo.png' %}" width="600" height="250" style="display: inline-block">
 <h1 class="big_text" style="display: inline-block; position: absolute; top: -35px; word-wrap: break-word;">Victorious Victorina! Ласкаво просимо!                          ㅤ</h1>
-<button style="display: inline-block; float: right;"><img src="{% static 'img/dark_icon.png' %}" width="50" height="50"></button>
+<button class="round_button" style="display: inline-block; float: right; margin-left: 5px; "><img src="{% static 'img/light_icon.png' %}" width="50" height="50"></button>
+<button class="round_button" style="display: inline-block; float: right;"><img src="{% static 'img/settings_light.png' %}" width="50" height="50"></button>
 
 <br>
 
-<a href="{% url "novation_list" %}"><button class="section_button">Головна</button></a>
-<a href="{% url "victorina_list" %}"><button class="section_button">Вікторини</button></a>
+<a href="{% url "novations_list" %}"><button class="section_button">Головна</button></a>
+<a href="{% url "victorinas_list" %}"><button class="section_button">Вікторини</button></a>
 <a><button class="section_button">Форуми</button></a>
 
 <br>
@@ -17,4 +18,6 @@
 {% block content %}
 {% endblock %}
 
-<h1 class="small_text">Для зв'язку: +38038523859</h1>
+<footer style="background-color: rgb(0, 0, 0, 0.1); display: flex; margin-top: auto; height: auto; padding: 0 20px 0 20px;">
+    <h1 class="small_text">Для зв'язку: +38038523859<br>All rights reserved<br>ⓒ VictoriousVictorina 2025</h1>
+</footer>

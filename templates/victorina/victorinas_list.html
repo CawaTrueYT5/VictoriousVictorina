@@ -1,0 +1,23 @@
+﻿{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/main_style.css' %}">
+
+{% block content %}
+    <div style="width: 100%; height: 8%">
+        <h1 id="A" class="small_text" style="display: inline-block; float: left;">Список усіх вікторин:</h1>
+        <a href="{% url 'victorina_creating' %}"><button class="button" style="display: inline-block; float: right;">Створити</button></a>
+    </div>
+    <br>
+    <br>
+
+    {% for victorina in victorinas %}
+    <div class="scoreboard">
+        <h1 class="small_text" style="font-size: 55px">{{victorina.title}}</h1>
+        <h1 class="small_text">{{victorina.description}}</h1>
+        <button onclick="GoToPage(event)" id={{victorina.id}} class="button">Зайти на сторінку</button>
+        <button onclick="Start(event)" id={{victorina.id}} class="button" style="float: right">Розпочати</button>
+    </div>
+    {% endfor %}
+
+    <script src="{% static 'js/victorina_scoreboard.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,1 @@
+﻿document.getElementById("questions_amount").textContent = "Кількість питань: " + String(document.getElementById("questions_amount").textContent.split("  /  ").length)

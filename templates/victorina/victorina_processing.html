@@ -1,0 +1,9 @@
+{% load static %}
+<link rel="shortcut icon" href="{% static 'favicon/site_icon.ico' %}">
+<link rel="stylesheet" href="{% static 'css/main_style.css' %}">
+
+<h1 id="question_name" class="big_text">Question name</h1>
+<h1 id="question_text" class="big_text">Question text</h1>
+<h1 id="questions" class="big_text" style="visibility: hidden">{{victorina.questions}}</h1>
+
+<script src="{% static 'js/victorina_processing.js' %}"></script>

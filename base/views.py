@@ -8,3 +8,4 @@ def base_view(request):
 class NovationsListView(ListView):
     model = Novation
     context_object_name = "novations"
+    template_name = "base/novations_list.html"

@@ -1,0 +1,23 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div style="width: 100%; height: 8%">
+        <h1 style="display: inline-block; float: left;" class="small_text">Вітаємо у майстрі зі створення вікторин!</h1>
+        <a style="display: inline-block; float: right;" href="{% url 'victorinas_list' %}"><button class="button">Назад</button></a>
+    </div>
+
+    <br> 
+    <br>   
+
+    <div class="scoreboard">
+        <h1 class="small_text">Введіть назву вікторини: </h1>
+        <input type="text" class="input_field">
+    </div>
+    <div class="scoreboard">
+        <h1 class="small_text">Опишіть свою вікторину: </h1>
+    </div>
+    <div class="scoreboard">
+        
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+        <h1 class="big_text">Ласкаво просимо!</h1>
+        <h1 class="small_text">Ви знаходитесь на головній сторінці сайту VictoriousVictorina! Це сайт присвячений, як ви могли здогадатись, вікторинам. Спеціально розроблений під це, він має багато можливостей у їх виставці народові та власне створенню.</h1>
+        <h1 class="small_text">Ось так от</h1>
+    </div>
+    
+    &emsp;
+    
+    <h1 class="small_text">Останні новини:</h1>
+    {% for novation in novations %}
+        <div class="scoreboard">
+            <h1 class="small_text" style="font-size: 55px">{{novation.title}}</h1>
+            <h1 class="small_text">{{novation.content}}</h1>
+        </div>
+    {% endfor %}
+{% endblock %}
