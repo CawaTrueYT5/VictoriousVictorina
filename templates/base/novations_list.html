@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
     <div>
@@ -9,11 +10,15 @@
     
     &emsp;
     
-    <h1 class="small_text">Останні новини:</h1>
-    {% for novation in novations %}
-        <div class="scoreboard">
-            <h1 class="small_text" style="font-size: 55px">{{novation.title}}</h1>
-            <h1 class="small_text">{{novation.content}}</h1>
-        </div>
-    {% endfor %}
+    <h1 id="A" class="small_text">Останні новини:</h1>
+    <div id="NovationsSection">
+        {% for novation in novations %}
+            <div id="{{novation.id}}" class="scoreboard">
+                <h1 class="small_text" style="font-size: 55px">{{novation.title}}</h1>
+                <h1 class="small_text">{{novation.content}}</h1>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script src="{% static "js/novations_order.js" %}"></script>
 {% endblock %}

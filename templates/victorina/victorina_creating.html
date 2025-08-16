@@ -2,22 +2,65 @@
 {% load static %}
 
 {% block content %}
-    <div style="width: 100%; height: 8%">
+    <div style="height: 8%">
         <h1 style="display: inline-block; float: left;" class="small_text">Вітаємо у майстрі зі створення вікторин!</h1>
-        <a style="display: inline-block; float: right;" href="{% url 'victorinas_list' %}"><button class="button">Назад</button></a>
+        <a style="display: inline-block; float: right; padding: 0 15px 0 0" href="{% url 'victorinas_list' %}"><button class="button">Назад</button></a>
     </div>
 
     <br> 
     <br>   
 
-    <div class="scoreboard">
-        <h1 class="small_text">Введіть назву вікторини: </h1>
-        <input type="text" class="input_field">
+    <div class="scoreboard" style="height: 10%">
+        <h1 style="display: inline-block" class="small_text">Введіть назву вікторини: </h1>
+        <input id="VictorinasName" style="display: inline-block" type="text" class="input_field">
     </div>
-    <div class="scoreboard">
-        <h1 class="small_text">Опишіть свою вікторину: </h1>
+    <div class="scoreboard" style="height: 10%">
+        <h1 style="display: inline-block" class="small_text">Опишіть свою вікторину: </h1>
+        <input id="VictorinasDescription" style="display: inline-block; width: 75%; height: 100%" type="text" class="input_field">
     </div>
-    <div class="scoreboard">
-        
+
+    <div id="QuestionsSector" class="scoreboard">
+        <h1 class="small_text">Питання:</h1>
+        <div class="scoreboard" id="1/QuestionSector">
+            <div>
+                <h1 id="1/QuestionTitle" style="display: inline-block; padding: 0 50% 0 0" class="small_text">Питання 1</h1>
+                <button id="1/DeleteQuestion" style="display: inline-block; float: right" onclick="DeleteQuestion(event)" class="button">Видалити питання</button>
+            </div>
+
+            <div>
+                <h1 style="display: inline-block" class="small_text">Саме запитання: </h1>
+                <input id="1/QuestionEnter" style="display: inline-block" type="text" class="input_field">
+            </div>
+            <div>
+                <h1 style="display: inline-block" class="small_text">Додаткова інформація: </h1>
+                <input id="1/InformationEnter" style="display: inline-block" type="text" class="input_field">
+            </div>
+            <h1 class="small_text">Варіанти відповідей: </h1>
+            <div id="1/AnswersSector" class="scoreboard">
+                <div id="1/AnswerSector/1">
+                    <h1 id="1/AnswerTitle/1" style="display: inline-block" class="small_text">Відповідь 1: </h1>
+                    <input id="1/AnswerEnter/1" style="display: inline-block" type="text" class="input_field">
+
+                    <label for="1/TrueCheck/1" class="small_text">Вірна відповідь: </label>
+                    <input id="1/TrueCheck/1" name="Choice1" style="display: inline-block" type="radio">
+
+                    <button onclick="DeleteAnswer(event)" id="1/DeleteAnswer/1" style="display: inline-block; float: right" class="button">Видалити</button>
+                </div>
+            </div>
+            <button onclick="AddAnswer(event)" id="1/AddAnswer" class="button">Додати ще</button>
+        </div>
+        <button id="ButtonAdd" onclick="AddQuestion()" class="button">Додати запитання</button>
+        <button onclick="A()" class="button">Додати запння</button>
     </div>
+
+    <div style="width: 100%; height: 15%">
+        <a style="display: inline-block; float: left;" href="{% url 'victorinas_list' %}"><button class="button">Очистити</button></a>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <a style="display: inline-block; float: right; white-space: nowrap; padding: 0 37px 0 0" href="{% url 'victorinas_list' %}"><button onclick="CreateVictorina()" type="submit" class="button">Додати вікторину</button></a>
+        </form>
+    </div>
+
+    <script src="{% static "js/victorina_creating.js" %}"></script>
 {% endblock %}

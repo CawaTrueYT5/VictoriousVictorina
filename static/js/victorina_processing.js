@@ -1,13 +1,10 @@
-const questions = document.getElementById("questions").getAttribute("title");
-console.log(questions);
 Array = document.getElementById("questions").textContent.split("  /  ");
 
-
 let i = 0
-var Answers = new Map();
 ProcessQuestion();
 
 function ProcessQuestion() {
+    var Answers = new Map();
     ArraySplitted = Array[i].split(" - ");
     document.getElementById("question_name").textContent = ArraySplitted[1];
     document.getElementById("question_text").textContent = ArraySplitted[2];
@@ -16,10 +13,16 @@ function ProcessQuestion() {
         let Answer = Number(event.target.id[6]) + 1;
         if (Answer == RightAnswer) {
             i = i + 1;
-            for (let e = 1; e <= Answers.size; e++) {
-                document.body.removeChild(Answers.get(String(e)));
+            if (i <= Array.length - 1) {
+                for (let e = 1; e <= Answers.size; e++) {
+                    document.body.removeChild(Answers.get(String(e)));
+                }
+                ProcessQuestion();
             }
-            ProcessQuestion();
+            else {
+                history.pushState({}, "", "/victorinas/" + document.getElementById("victorina_id").textContent + "/result");
+                location.reload();
+            }
         }
     }
 
